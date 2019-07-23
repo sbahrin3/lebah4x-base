@@ -1,0 +1,13 @@
+
+<div id="tab_logout" class="shadow"
+style="border:1px solid #ebebeb;background:#fff;position:relative;float:right;margin-right:10px;width:300px;height:80px; padding:20px; -moz-border-radius: 10px; border-radius: 10px;  z-index: 9999;display:none;">
+	<div>
+	<i class="fa fa-user" aria-hidden="true"></i> $user.firstName
+	</div>
+	<div style="text-align:left">
+	<a href='../logout.jsp' style="cursor:hand; cursor:pointer;font-family:Verdana;font-size:10pt;">Logout</a>
+	&nbsp;
+	<a href="javascript:void(0)" onclick="_jq('#tab_logout').slideUp('slow');">Cancel</a>
+	</div>
+</div>
+
