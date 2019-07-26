@@ -147,13 +147,13 @@
 		document.getElementById("div").value = div;
 		document.getElementById("param").value = param;
 	}
-	
-	function sendAjaxQuite(action, div, param) {
+		
+	function sendAjax2(action, div, param) {
 		isScrollTop = false;
 		sendAjax(action, div, param);
 	}
 	
-	function sendAjax2(action, div, param) {
+	function sendAjaxQuite(action, div, param) {
 		isScrollTop = false;
 		sendAjax(action, div, param);
 	}
@@ -178,7 +178,7 @@
 		isScrollTop = true;
 	}
 	
-	//on page first load
+	//ON PAGE FIRST LOAD
 	Event.observe(window, "load", onload, false);
 	function onload(){
 		

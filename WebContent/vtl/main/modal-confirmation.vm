@@ -34,21 +34,11 @@
   <script type="text/javascript">
     _jqb(document).ready(function(){
     	
-    	//this seem to be did not working
-	    _jqb(".btn-confirmation").click(function(){
-	        _jqb("#modal-header").html(_jqb(this).attr("data-header"));
-	        _jqb("#modal-message").html(_jqb(this).attr("data-message"));
-	        _jqb('input[name="param"]').val(_jqb(this).attr("data-param"));
-	        _jqb('input[name="div"]').val(_jqb(this).attr("data-div"));
-	        _jqb('input[name="action"]').val(_jqb(this).attr("data-action"));
-	    });    
-    
-    	//but this one working fine! I DON'T KNOW WHY????
 	    _jqb(".yes").click(function(){
 	        var div = _jqb('input[name="div"]').val();
 	        var param = _jqb('input[name="param"]').val();
 	        var action = _jqb('input[name="action"]').val();
-	        sendAjax(action, div, param);
+	        sendAjax2(action, div, param);
 	    });
  });
   </script>
