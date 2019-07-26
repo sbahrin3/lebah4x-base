@@ -169,7 +169,7 @@ body {
 .popup-box {
 	display:none;
 	padding:10px;
-	border:1px solid #ebebeb;
+	border:1px solid #000;
 	background: #fff;
 	border-radius: 10px;
 	-moz-box-shadow: 8px 8px 4px #888; -webkit-box-shadow: 8px 8px 4px #888; box-shadow: 8px 8px 4px #888;
@@ -288,6 +288,10 @@ function callAjaxLogin(e, username, password) {
 
 <script type="text/javascript" src="${relativeDir}vtl/main/other_scripts.js" ></script>
 
+
+<script type="text/javascript" src="${relativeDir}ckeditor/ckeditor.js" ></script>		
+
+<script src="${relativeDir}js/canvasjs.min.js"></script>				
 
 <script>
 var _jqb = jQuery.noConflict();

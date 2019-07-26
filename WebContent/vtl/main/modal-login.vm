@@ -13,7 +13,7 @@
             </div>
             <div class="form-group">
               <label for="password"><span><i class="fa fa-eye" aria-hidden="true"></i></span> Password</label>
-              <input type="text" class="form-control" id="password" placeholder="Enter password" onfocus="$('divPortalLoginResult').style.display='none';" onKeyDown="loginInputKey(event, this)">
+              <input type="password" class="form-control" id="password" placeholder="Enter password" onfocus="$('divPortalLoginResult').style.display='none';" onKeyDown="loginInputKey(event, this)">
             </div>
             <button type="submit" class="btn btn-primary btn-block" style="height:50px" id="btnSubmit" onclick="doLogin()"><span><i class="fa fa-power-off" aria-hidden="true"></i></span> Login</button>
 			<div id="divPortalLoginResult" style="display:none;height:180px;font-size:10pt;text-align:center;"></div>

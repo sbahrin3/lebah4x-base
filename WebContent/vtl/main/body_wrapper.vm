@@ -7,20 +7,18 @@
 </head>
 <body style="background:#ebebeb">
 
-
 <div id="navbar" class="">
 	<div style="float:left">
 		<button class="openbtn" onclick="toggleNav()"><i class="fa fa-bars" aria-hidden="true"></i></button>  
 		<span id="app_title">
-		LEBAH FRAMEWORK
+		SALES & SERVICES MANAGEMENT 1.0
 		</span>
 	</div>
 	<div style="float:right;padding:15px;text-align:right">
 		#if ( $_logged_in )
-			
 			<a href="javascript:void(0)" style="cursor:hand; cursor:pointer;color:#fff;font-family:Verdana;font-size:10pt;"
 			onclick="_jq('#tab_logout').slideDown('slow');">
-			<i class="fa fa-user" aria-hidden="true"></i> $!user.firstName $!user.lastName
+			<i class="fa fa-user-circle-o" aria-hidden="true"></i> $!user.firstName $!user.lastName
 			</a>
 		#else
 			<a href="javascript:void(0)" style="cursor:hand; cursor:pointer;color:#fff;font-family:Verdana;font-size:10pt;"  onclick="show_login()">Login</a>
@@ -39,10 +37,18 @@
   	</div>
   	
   	<div>
-  		#parse("vtl/main/menu_sample.vm")
+  		#if ( $_logged_in )
+  			#parse("vtl/main/menu_user.vm")
+  		#else
+  			#parse("vtl/main/menu_anon.vm")
+  		#end
   	</div>
   	<div id="bottom_text">
-  		LEBAH FRAMEWORK
+  		INSTRUMENTATION &
+  		PETROLEUM
+  		SERVICES
+  		ASIA
+  		SDN BHD
   	</div>
 </div>
 
@@ -54,12 +60,19 @@
 			<input type="hidden" name="command" id="command">
 			<input type="hidden" name="__module_name" id="__module_name">
 			<div id="portal_main_view"></div>
-			<div id="div_center"></div>
+			<div id="div_center" class="shadow"></div>
+			#parse("vtl/main/modal-window.vm")
 		</form>
 	</div>
 	
 	<div style="margin-top:300px;text-align:center">
-	&copy; 2019 Lebah . Copyright Notice . Help . Site Terms . Privacy . Developer Distribution Agreement
+		<a href="#" data-toggle="modal" data-target="#modalWindow" onclick="">&copy; 2019 Lebah</a>
+		. 
+		<a href="#" data-toggle="modal" data-target="#modalWindow" onclick="">Copyright Notice</a>
+		.
+		<a href="#" data-toggle="modal" data-target="#modalWindow" onclick="">Site Terms</a>
+		.
+		<a href="#" data-toggle="modal" data-target="#modalWindow" onclick="">Developer Distribution Agreement</a>
 	</div>
 
 </div>
@@ -140,6 +153,11 @@
 		sendAjax(action, div, param);
 	}
 	
+	function sendAjax2(action, div, param) {
+		isScrollTop = false;
+		sendAjax(action, div, param);
+	}
+	
 	function toggleSubMenu(e) {
 		if ( document.getElementById(e).style.display == "none" ) {
 			//document.getElementById(e).style.display = "block";
@@ -164,10 +182,17 @@
 	Event.observe(window, "load", onload, false);
 	function onload(){
 		
-		let page_name = 'lebah.portal.v2.LandingPageModule';
-		getPage(page_name);
+		#if ( $_logged_in )
+			let page_name = 'sb.salesmgt.modules.SalesDashboardModule';
+			//let page_name = 'sb.salesmgt.modules.QuotationsModule';
+			getPage(page_name);
+			openNav();
+		#else
+			let page_name = 'lebah.portal.v2.LandingPageModule';
+			getPage(page_name);
+		#end
 		
-		openNav();
+
 	}
 	
 </script>
