@@ -1,0 +1,50 @@
+
+
+<div class="vertical-menu">
+
+  
+  
+  	<a href="javascript:getPage('sb.salesmgt.modules.SalesDashboardModule')"><i class="fa fa-television" aria-hidden="true"></i><span>Dashboard</span></a>
+ 	<a href="javascript:getPage('sb.salesmgt.modules.ProductsModule')"><i class="fa fa-server" aria-hidden="true"></i><span>Products</span></a>
+	<a href="javascript:getPage('sb.salesmgt.modules.CustomersModule')"><i class="fa fa-address-card" aria-hidden="true"></i><span>Customers</span></a>
+   	<a href="javascript:getPage('sb.salesmgt.modules.QuotationsModule')"><i class="fa fa-calculator" aria-hidden="true"></i><span>Quotations</span></a>
+  
+
+
+  	<a href="javascript:toggleSubMenu('sub-menu-1')">
+  		<i class="fa fa-line-chart" aria-hidden="true"></i>
+  		<span>Reports</span>
+  		<span style="float:right" id="icon-sub-menu-1">
+  			<i class="fa fa-angle-right" aria-hidden="true"></i>
+  		</span>
+  	</a>
+  
+  	<div id="sub-menu-1" style="display:none;padding-left:10px">
+  		<a href="javascript:getPage('sb.salesmgmt.reports.ProductsReportModule')"><i class="fa fa-bar-chart" aria-hidden="true"></i><span>Products Catalog</span></a>
+    	<a href="javascript:getPage('sb.salesmgmt.reports.CustomersReportModule')"><i class="fa fa-bar-chart" aria-hidden="true"></i><span>Customers Listing</span></a>
+    	<a href="javascript:getPage('sb.salesmgmt.reports.QuotationsListReportModule')"><i class="fa fa-bar-chart" aria-hidden="true"></i><span>Quotations Listing</span></a>
+  	</div>
+  
+ 
+ 	<a href="javascript:toggleSubMenu('sub-menu-settings')">
+  		<i class="fa fa-cog" aria-hidden="true"></i>
+  		<span>Settings</span>
+  		<span style="float:right" id="icon-sub-menu-settings">
+  			<i class="fa fa-angle-right" aria-hidden="true"></i>
+  		</span>
+  	</a>
+  
+  <div id="sub-menu-settings" style="display:none;padding-left:10px">
+    	<a href="javascript:getPage('lebah.module.UserProfileModule')"><i class="fa fa-user" aria-hidden="true"></i><span>My Profile</span></a>
+    	#if ( $user.role.id == "admin" )
+    		<a href="javascript:getPage('lebah.module.UsersModule')"><i class="fa fa-users" aria-hidden="true"></i><span>Users</span></a>
+  		#end
+  </div>
+  
+  <br/>
+  <a href='../logout.jsp'> <i class="fa fa-sign-out" aria-hidden="true"></i><span>Logout</span></a>
+ 
+ <hr/>
+   
+
+</div>

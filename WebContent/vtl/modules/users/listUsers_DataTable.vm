@@ -1,0 +1,38 @@
+<table id="table_list_users" class="table table-striped">
+	<thead>
+	<tr>
+		<th></th>
+		<th>User Name</th>
+		<th>User Role</th>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th></th>
+		<th style="width:50px"></th>
+	</tr>
+	</thead>
+	<tbody>
+	#foreach ( $userData in $users )
+	<tr>
+		<td style="cursor:pointer" onclick="sendAjax('editUser', 'user_main', 'userId=$userData.id')"></td>
+		<td>$!userData.userName</td>
+		<td>$!userData.role.name</td>
+		<td>$!userData.firstName</td>
+		<td>$!userData.lastName</td>
+		<td>
+			#if ( $userData.avatarImageFileName )
+			 <img style="width:40px;border-radius:50%" src="../download?filepath=/Users/Admin/uploads&filename=$!userData.avatarImageFileName" />
+			#end
+		</td>
+		<td align="right">
+		
+			<button type="button" class="btn btn-default btn-sm" onclick="sendAjax('editUser', 'user_main', 'userId=$userData.id')"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+
+			<button type="button" class="btn btn-confirmation btn-default btn-sm"  data-toggle="modal" data-target="#confirmation" onclick="sendAjaxConfirm('Confirmation', 'Are you sure to delete this user data?', 'deleteUser','user_main','userId=$userData.id')">
+				<i class="fa fa-trash-o" aria-hidden="true"></i>
+			</button>
+
+		</td>
+	</tr>
+	#end
+	</tbody>
+</table>
