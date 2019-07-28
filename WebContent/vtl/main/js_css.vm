@@ -40,7 +40,7 @@ body {
   color: #fff;
   height:50px;
   border-bottom:1px solid #ebebeb;
-  z-index: 999;
+  z-index: 9990;
 }
 
 #app_title {

@@ -4,6 +4,7 @@
 <script>
 if ( document.getElementById('__module_name') != null ) {
 	document.getElementById('__module_name').value = '$!module_name';
+	scrollTop();
 }
-scrollTop();
+
 </script>
