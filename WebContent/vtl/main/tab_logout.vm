@@ -1,12 +1,22 @@
 <div id="tab_logout" class="popup-box" style="background:#fff;position:absolute;right:10px;left:70%;z-Index:9999">
 
 	<div style="">
-			#if ( $user.avatarImageFileName )
-				<img style="width:100px;border-radius:50%" src="../download?filepath=/Users/Admin/uploads&filename=$!user.avatarImageFileName" />
-			#else
-				<i class="fa fa-user-circle-o" aria-hidden="true"></i> 
-			#end
-			$!user.firstName $!user.lastName
+		<table style="width:100%">
+			<tr>
+				<td style="width:120px">
+					#if ( $user.avatarImageFileName )
+						<img style="width:100px;border-radius:50%" src="../download?filepath=/Users/Admin/uploads&filename=$!user.avatarImageFileName" />
+					#else
+						<i class="fa fa-user-circle-o" aria-hidden="true"></i> 
+					#end
+				</td>
+				<td style="text-align:left;font-weight:bold;padding-left:5px">
+					$!user.firstName $!user.lastName<br/>
+					$!user.position<br/>
+					$!user.email
+				</td>
+			</tr>
+		</table>
 	</div>
 	
 	<div style="text-align:right">

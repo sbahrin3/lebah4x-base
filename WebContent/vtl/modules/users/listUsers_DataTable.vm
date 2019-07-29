@@ -1,3 +1,15 @@
+#if ( $command == "deleteUser" )
+	#if ( $error )
+		<div class="alert alert-danger" onclick="this.style.display='none'">
+		  	Can't delete data.
+		</div>
+	#else
+		<div class="alert alert-success" onclick="this.style.display='none'">
+		  	Data successfully deleted.
+		</div>
+	#end
+#end
+
 <table id="table_list_users" class="table table-striped">
 	<thead>
 	<tr>

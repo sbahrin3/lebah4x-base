@@ -10,11 +10,9 @@
 <div id="navbar">
 
 
-	<div style="float:left">
+	<div id="app_title" style="float:left;">
 		<button class="openbtn" onclick="toggleNav()"><i class="fa fa-bars" aria-hidden="true"></i></button>  
-		<span id="app_title">
-			Sales & Service Management System
-		</span>
+		SALES & SERVICES MANAGEMENT SYSTEM
 	</div>
 	<div style="float:right;padding:15px;text-align:right">
 		#if ( $_logged_in )
@@ -73,13 +71,13 @@
 	</div>
 	
 	<div style="margin-top:300px;text-align:center">
-		<a href="#" data-toggle="modal" data-target="#modalWindow" onclick="">&copy; 2019 Lebah</a>
+		<a href="#" style="text-decoration:none" data-toggle="modal" data-target="#modalAbout">&copy; 2019 Lebah
 		. 
-		<a href="#" data-toggle="modal" data-target="#modalWindow" onclick="">Copyright Notice</a>
+		Sales & Service Management System
 		.
-		<a href="#" data-toggle="modal" data-target="#modalWindow" onclick="">Site Terms</a>
+		Version 1.0
 		.
-		<a href="#" data-toggle="modal" data-target="#modalWindow" onclick="">Developer Distribution Agreement</a>
+		</a>
 	</div>
 
 </div>
@@ -89,7 +87,7 @@
 
 #parse("vtl/main/modal-confirmation.vm")
 #parse("vtl/main/modal-login.vm")
-
+#parse("vtl/main/modal-about.vm")
 
 
 <script>
@@ -121,13 +119,13 @@
 	function openNav() {
 		document.getElementById("portalSideMenu").style.width = "250px";
 		document.getElementById("main").style.marginLeft = "250px";
-		document.getElementById("navbar").style.marginLeft = "250px";
+		document.getElementById("app_title").style.marginLeft = "250px";
 	}
 
 	function closeNav() {
 		document.getElementById("portalSideMenu").style.width = "0px";
 		document.getElementById("main").style.marginLeft = "0";
-		document.getElementById("navbar").style.marginLeft = "0";
+		document.getElementById("app_title").style.marginLeft = "0";
 	}
 	
 	function toggleNav() {

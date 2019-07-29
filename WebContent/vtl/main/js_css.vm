@@ -30,6 +30,7 @@ body {
 
 #portalSideMenu {
 	background:#0968C2;
+	z-index: 999;
 
 }
 
@@ -40,13 +41,14 @@ body {
   color: #fff;
   height:50px;
   border-bottom:1px solid #ebebeb;
-  z-index: 9990;
+  z-index: 998;
 }
 
 #app_title {
 	font-family:arial, helvetica, sans-serif;
 	font-size:12pt;
 	font-weight:bold;
+	transition: margin-left .5s;
 }
 
 #bottom_text {
@@ -217,6 +219,13 @@ body {
 	color: #fff;
 }
 
+#login-box {
+	/* background:url(../views/img/gas-plant.jpg); */
+	background-color:#076ac6;
+	padding:20px; 
+	color:#fff
+
+}
 </style>
 
 
@@ -257,10 +266,12 @@ function callAjaxLogin(e, username, password) {
 					result = t.responseText;
 					var json = eval("(" + result + ")");
 					if ( json.result == "true" ) {
-						e.innerHTML = "<br/><br/><b>Login Success.. Please Wait...</b><br><img src='../img/loading1.gif' border='0' width='100px'>";
+						e.innerHTML = "<b>Login Success.. Please Wait...</b><br><img src='../img/loading1.gif' border='0' width='100px'>";
 						window.location = "../";
 					} else {
-						e.innerHTML = "<br/><br/><b>Access Denied!<br/>Incorrect password <br/>or unknown username</b>";
+						e.style.fontSize = "12pt";
+						e.style.color = "#fff";
+						e.innerHTML = "<b>Access Denied! Incorrect password or unknown username</b>";
 					} 
 				},
 				on404: function(t) {

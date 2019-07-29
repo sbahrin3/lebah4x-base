@@ -4,7 +4,7 @@
   	
 	  	<div class="form-group">
 			<label for="userDataName">Username</label>
-			<input type="text" maxlength="100" #if ( $userData ) readonly #end class="form-control" value="$!userData.userName"  placeholder="">
+			<input type="text" maxlength="100" #if ( $userData ) readonly #end class="form-control" name="userName" value="$!userData.userName"  placeholder="">
 		</div>
   	
   	</div>
