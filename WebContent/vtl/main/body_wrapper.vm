@@ -48,12 +48,12 @@
   		#if ( $_logged_in )
   			#parse("vtl/main/menu_user.vm")
   		#else
-  			#parse("vtl/main/menu_anon.vm")
+  			##parse("vtl/main/menu_anon.vm")
+  			#parse("vtl/main/menu_demo.vm")
   		#end
   	</div>
   	<div id="bottom_text">
-  		Instrumentation & Petroleum Services
-		Asia Sdn Bhd
+  		&copy; 2019 Ver 1.0
   	</div>
 </div>
 
