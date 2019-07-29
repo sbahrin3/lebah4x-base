@@ -12,7 +12,7 @@
 
 	<div id="app_title" style="float:left;">
 		<button class="openbtn" onclick="toggleNav()"><i class="fa fa-bars" aria-hidden="true"></i></button>  
-		SALES & SERVICES MANAGEMENT SYSTEM
+		YOUR APP TITLE HERE
 	</div>
 	<div style="float:right;padding:15px;text-align:right">
 		#if ( $_logged_in )
@@ -73,8 +73,6 @@
 	<div style="margin-top:300px;text-align:center">
 		<a href="#" style="text-decoration:none" data-toggle="modal" data-target="#modalAbout">&copy; 2019 Lebah
 		. 
-		Sales & Service Management System
-		.
 		Version 1.0
 		.
 		</a>
