@@ -186,13 +186,12 @@
 	function onload(){
 		
 		#if ( $_logged_in )
-			let page_name = 'sb.salesmgt.modules.SalesDashboardModule';
-			//let page_name = 'sb.salesmgt.modules.QuotationsModule';
+			//let page_name = 'sb.salesmgt.modules.SalesDashboardModule';
+			let page_name = 'lebah.portal.v2.LandingPageModule';
 			getPage(page_name);
 			openNav();
 		#else
 			let page_name = 'lebah.portal.v2.LandingPageModule';
-			//let page_name = 'lebah.module.UsersModule';
 			getPage(page_name);
 		#end
 		
