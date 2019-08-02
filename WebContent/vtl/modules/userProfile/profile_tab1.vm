@@ -106,7 +106,7 @@
 		  	
 		  	<div id="divUploadFile1">
 		  	#if ( $userData.avatarImageFileName )
-		  		<img style="width:100px" src="../download?filepath=/Users/Admin/uploads&filename=$!userData.avatarImageFileName" />
+		  		<img style="width:100px" src="../download?filename=$!userData.avatarImageFileName" />
 		  	#end
 		  	</div>
 		  	
@@ -131,7 +131,7 @@
 		  <div style="padding:10px;margin-top:50px">
 			  	<div id="divUploadFile2">
 			  	#if ( $userData.signatureImageFileName )
-			  		<img style="width:100px" src="../download?filepath=/Users/Admin/uploads&filename=$!userData.signatureImageFileName" />
+			  		<img style="width:100px" src="../download?filename=$!userData.signatureImageFileName" />
 			 		<br/>
 			  	#end
 			  	</div>

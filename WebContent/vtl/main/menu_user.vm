@@ -10,6 +10,7 @@
    	<a href="javascript:getPage('sb.salesmgt.modules.QuotationsModule')"><i class="fa fa-calculator" aria-hidden="true"></i><span>Quotations</span></a>
   
 
+	<div style="border-bottom:1px dotted #ebebeb"></div>
 
   	<a href="javascript:toggleSubMenu('sub-menu-1')">
   		<i class="fa fa-line-chart" aria-hidden="true"></i>
@@ -25,10 +26,12 @@
     	<a href="javascript:getPage('sb.salesmgmt.reports.QuotationsListReportModule')"><i class="fa fa-bar-chart" aria-hidden="true"></i><span>Quotations Listing</span></a>
   	</div>
   
+ 	<div style="border-bottom:1px dotted #ebebeb"></div>
+ 
  
  	<a href="javascript:toggleSubMenu('sub-menu-settings')">
   		<i class="fa fa-cog" aria-hidden="true"></i>
-  		<span>Settings</span>
+  		<span>Maintenance & Settings</span>
   		<span style="float:right" id="icon-sub-menu-settings">
   			<i class="fa fa-angle-right" aria-hidden="true"></i>
   		</span>
@@ -38,10 +41,12 @@
     	<a href="javascript:getPage('lebah.module.UserProfileModule')"><i class="fa fa-user" aria-hidden="true"></i><span>My Profile</span></a>
     	#if ( $user.role.id == "admin" )
     		<a href="javascript:getPage('lebah.module.UsersModule')"><i class="fa fa-users" aria-hidden="true"></i><span>Users</span></a>
+  			<a href="javascript:getPage('sb.salesmgt.modules.ProductTypesRecordModule')"><i class="fa fa-calculator" aria-hidden="true"></i><span>Product Types</span></a>
+   			<a href="javascript:getPage('sb.salesmgt.modules.ProductBrandsRecordModule')"><i class="fa fa-calculator" aria-hidden="true"></i><span>Product Brands</span></a> 
   		#end
   </div>
   
-  <br/>
+  <div style="border-bottom:1px dotted #ebebeb"></div>
   <a href='../logout.jsp'> <i class="fa fa-sign-out" aria-hidden="true"></i><span>Logout</span></a>
  
 

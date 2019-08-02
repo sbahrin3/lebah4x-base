@@ -32,7 +32,7 @@
 		<td>$!userData.lastName</td>
 		<td>
 			#if ( $userData.avatarImageFileName )
-			 <img style="width:40px;border-radius:50%" src="../download?filepath=/Users/Admin/uploads&filename=$!userData.avatarImageFileName" />
+			 <img style="width:40px;border-radius:50%" src="../download?filename=$!userData.avatarImageFileName" />
 			#end
 		</td>
 		<td align="right">
