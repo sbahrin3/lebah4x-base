@@ -16,15 +16,9 @@
 	</div>
 	<div style="float:right;padding:15px;text-align:right">
 		#if ( $_logged_in )
-			<a href="javascript:void(0)" style="cursor:hand; cursor:pointer;color:#fff;font-family:Verdana;font-size:10pt;"
-			onclick="_jq('#tab_logout').slideDown('slow');">
-			#if ( $user.avatarImageFileName )
-				<img style="width:30px;border-radius:50%" src="../download?filename=$!user.avatarImageFileName" />
-			#else
-				<i class="fa fa-user-circle-o" aria-hidden="true"></i> 
-			#end
-			$!user.firstName $!user.lastName
-			</a>
+			
+			#parse("vtl/main/user_logged_in.vm")
+			
 		#else
 			<a href="javascript:void(0)" style="cursor:hand; cursor:pointer;color:#fff;font-family:Verdana;font-size:10pt;"  onclick="show_login()">Login</a>
 		#end
@@ -33,10 +27,6 @@
 	
 
 </div>
-
-#if ( $_logged_in )
-	#parse("vtl/main/tab_logout.vm")
-#end
 
 <div id="portalSideMenu" class="sidebar">
 
@@ -67,6 +57,7 @@
 			<input type="hidden" id="main_token" name="main_token" value="$!main_token">
 			<div id="portal_main_view"></div>
 			<div id="div_center" class="shadow"></div>
+			<div id="div_empty"></div>
 			#parse("vtl/main/modal-window.vm")
 		</form>
 	</div>
@@ -93,6 +84,7 @@
 
 <script>
 	
+	var lastMenu;
 	var isScrollTop = true;
 	
 	var _jq = jQuery.noConflict();
@@ -182,6 +174,19 @@
 			_jq('body, html, #portal_main_view').scrollTop(0);
 		}
 		isScrollTop = true;
+	}
+	
+	function menuSelect(e) {
+		 e.className='menu-selected';
+		 if ( typeof lastMenu !== "undefined" ) lastMenu.className='menu-normal';
+		 lastMenu = e;
+	}
+	
+	function showMyProfile() {
+		$('a_my_profile').className='menu-selected';
+		if ( typeof lastMenu !== "undefined" ) lastMenu.className='menu-normal';
+		lastMenu = $('a_my_profile');
+		getPage('lebah.module.UserProfileModule');
 	}
 	
 	//ON PAGE FIRST LOAD

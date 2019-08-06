@@ -77,6 +77,14 @@ body {
 	border-bottom:1px solid #000;
 }
 
+.section_title {
+	font-family:arial, helvetica, sans-serif;
+	font-size:12pt;
+	font-weight:bold;
+	margin-bottom:20px;
+	border-bottom:1px dotted #000;
+}
+
 .content {
   padding: 16px;
 }
@@ -206,9 +214,9 @@ body {
 }
 
 .vertical-menu a.active {
-  background-color: #4CAF50;
-  color: white;
-  text-decoration: none;
+  color: #fff;
+  background-color: #ccc;
+  text-decoration:none;
 }
 
 .vertical-menu span {
@@ -220,13 +228,37 @@ body {
 	color: #fff;
 }
 
+.menu-selected {
+  color: #fff;
+  background-color: #ccc;
+  text-decoration:none;
+}
+.menu-normal {
+  color: #fff;
+  background-color: #0968C2;
+  text-decoration:none;
+}
+
 #login-box {
-	/* background:url(../views/img/gas-plant.jpg); */
 	background-color:#076ac6;
 	padding:20px; 
 	color:#fff
 
 }
+
+.jGrowl .notify {
+	width:300px;
+	font-size:12pt;
+	color: #fff;
+    background-color: #4caf50;
+}
+.jGrowl .warning {
+	width:300px;
+	font-size:12pt;
+	color: #fff;
+    background-color: #ff0000;
+}
+
 </style>
 
 
@@ -303,7 +335,11 @@ function callAjaxLogin(e, username, password) {
 
 <script type="text/javascript" src="${relativeDir}ckeditor/ckeditor.js" ></script>		
 
-<script src="${relativeDir}js/canvasjs.min.js"></script>				
+<script src="${relativeDir}js/canvasjs.min.js"></script>		
+
+
+<link rel="stylesheet" type="text/css" href="${relativeDir}jquery/jquery.jgrowl.min.css" />
+<script src="${relativeDir}jquery/jquery.jgrowl.min.js"></script>		
 
 <script>
 var _jqb = jQuery.noConflict();
