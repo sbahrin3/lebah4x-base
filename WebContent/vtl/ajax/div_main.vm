@@ -14,14 +14,17 @@ if ( document.getElementById('main_token') != null ) {
 		console.log("**** REQUEST IS OK!");
 	}
 	else {
-
+		
 		console.log("**** THIS IS DIRECT ACCESS... WHICH IS NOT ALLOWED!");
+		//below will give problem when using file upload
 		//document.location = "../c/?rndId=b28c65d872ca8926db6f5df59b5f8e64aca5b0c3";
 	}
 	
 } else {
+	
 	console.log("**** THIS IS PROBABLY DIRECT ACCESS... WHICH IS NOT ALLOWED!");
-	document.location = "../c/?rndId=b28c65d872ca8926db6f5df59b5f8e64aca5b0c3";
+	//below will give problem when using file upload
+	//document.location = "../c/?rndId=b28c65d872ca8926db6f5df59b5f8e64aca5b0c3";
 }
 
 if ( document.getElementById('__module_name') != null ) {

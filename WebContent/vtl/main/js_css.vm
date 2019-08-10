@@ -339,7 +339,10 @@ function callAjaxLogin(e, username, password) {
 
 
 <link rel="stylesheet" type="text/css" href="${relativeDir}jquery/jquery.jgrowl.min.css" />
-<script src="${relativeDir}jquery/jquery.jgrowl.min.js"></script>		
+<script src="${relativeDir}jquery/jquery.jgrowl.min.js"></script>	
+
+
+<script src="${relativeDir}js/idle.js"></script>		
 
 <script>
 var _jqb = jQuery.noConflict();
