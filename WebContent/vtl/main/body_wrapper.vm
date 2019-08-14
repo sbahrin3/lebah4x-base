@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html>
-<title>LeBAH neXT</title>
+<title>IPSA - SSMS</title>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="../views/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../views/img/favicon.ico" type="image/x-icon">
+
+<!-- 
+ <script type="text/javascript">
+     function preventBack() { window.history.forward(); }
+     setTimeout("preventBack()", 0);
+     window.onunload = function () { null };
+ </script>
+-->
+ 
 #parse("vtl/main/js_css.vm")
 </head>
 <body style="background:#ebebeb">
@@ -134,11 +146,7 @@
 		document.__main_form.encoding ='multipart/form-data';
 		document.__main_form.target='upload_document';
 		
-	
 		var module_name = document.getElementById('__module_name').value;
-		console.log("UPLOAD FILE: module name = " + module_name);
-		
-		
 		document.__main_form.action='../div/' + module_name + '?command=uploadFile&elementName=' + elementName + '&divUploadStatusName=' + e + '&' + querystring;
 		document.__main_form.submit();
 	}
@@ -182,9 +190,10 @@
 	}
 	
 	function menuSelect(e) {
-		 e.className='menu-selected';
-		 if ( typeof lastMenu !== "undefined" ) lastMenu.className='menu-normal';
-		 lastMenu = e;
+		
+		e.className='menu-selected';
+		if ( typeof lastMenu !== "undefined" && lastMenu !== e ) lastMenu.className='menu-normal';
+		lastMenu = e;
 	}
 	
 	function showMyProfile() {
@@ -222,41 +231,6 @@
 	}
 	
 
-	/**	
-	_jq(function()
-		{
-		    //Flag to check if another key was pressed with alt
-		    var vAnotherKeyWasPressed = false;
-		    //ALT keycode const
-		    var ALT_CODE = 18; //18;
-
-		    //When some key is pressed
-		    _jq(window).keydown(function(event)
-		    {
-		        //Identifies the key
-		        var vKey = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-		        //The last key pressed is alt or not? 
-		        console.log("keydown: " + vKey);
-		        vAnotherKeyWasPressed = vKey != ALT_CODE;
-		    });
-
-		    //When some key is left
-		    _jq(window).keyup(function(event)
-		    {
-		        //Identifies the key
-		        var vKey = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-				console.log("keyup: " + vKey);
-		        //If the key left is ALT and no other key is pressed at the same time...
-		        if (!vAnotherKeyWasPressed && vKey == ALT_CODE)
-		        {
-		            //Focus the menu
-		            _jq('#myMenu').focus();
-		            //Stop the events for the key to avoid windows set the focus to the browser toolbar 
-		            return false;
-		        }
-		    });
-		});
-	**/
 	
 	document.onkeydown = KeyCheck; 
 	
@@ -264,7 +238,8 @@
 	{
 	   var KeyID = (window.event) ? event.keyCode : e.keyCode;
 	   
-	   console.log("key check: " + KeyID);
+	   //console.log("key check: " + KeyID);
+  
 	   switch(KeyID)
 	   {
 	      case 18: //Alt
@@ -278,6 +253,7 @@
 	      case 91: //Cmd
 	      alert('Disabled!');
 	      break;
+
 	   }
 	}
 	
