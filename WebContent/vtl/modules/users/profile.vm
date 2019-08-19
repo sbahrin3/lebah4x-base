@@ -1,11 +1,10 @@
 <div class="module_title">User Detail</div>
 
 #if ( $command == "saveUser" )
-<div id="use_saved" class="alert alert-success" onclick="this.style.display='none'">
-  User detail successfully saved!
-</div>
+	<script>showNotifyMessage("User successfully saved.");</script>
 #end
 
+#if ( $userData )
 <div class="row" style="margin-bottom:40px">
   <div class="col-sm-3">
   	#if ( $userData.avatarImageFileName )
@@ -23,6 +22,7 @@
   	
   </div>
 </div>
+#end
 
 <ul class="nav nav-tabs">
    	<li class="active"><a data-toggle="tab" href="#div_profile1">Biodata</a></li>

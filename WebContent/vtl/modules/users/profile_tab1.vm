@@ -4,7 +4,7 @@
   	
 	  	<div class="form-group">
 			<label for="userDataName">Username</label>
-			<input type="text" maxlength="100" #if ( $userData ) readonly #end class="form-control" name="userName" value="$!userData.userName"  placeholder="">
+			<input data-required="true" data-msg="Username is required." type="text" maxlength="100" #if ( $userData ) readonly #end class="form-control" name="userName" value="$!userData.userName"  placeholder="">
 		</div>
   	
   	</div>
@@ -12,7 +12,7 @@
  
 	  	<div class="form-group">
 			<label for="firstName">User Role</label>
-			<select class="form-control" id="roleId" name="roleId">
+			<select data-required="true" data-msg="User Role is required." class="form-control" id="roleId" name="roleId">
 				<option value=""></option>
 				#foreach ( $role in $roles )
 					<option value="$role.id" #if ( $userData.role.id == $role.id ) selected #end>$role.name</option>
@@ -30,7 +30,7 @@
  
 	  	<div class="form-group">
 			<label for="firstName">First Name</label>
-			<input type="text" maxlength="100" class="form-control" id="firstName" name="firstName" value="$!userData.firstName"  placeholder="">
+			<input data-required="true" data-msg="First Name is required." type="text" maxlength="100" class="form-control" id="firstName" name="firstName" value="$!userData.firstName"  placeholder="">
 		</div>
 		  	
   	</div>
@@ -154,7 +154,7 @@
 #end
 
 <div class="form-group" style="text-align:right">
-	<button type="button" class="btn btn-success" onclick="sendAjax('save', 'user_main', 'userId=$!userData.id')">Save&nbsp;<i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+	<button type="button" class="btn btn-success" onclick="saveData('save', 'user_main', 'userId=$!userData.id')">Save&nbsp;<i class="fa fa-floppy-o" aria-hidden="true"></i></button>
 	<button type="button" class="btn btn-default" onclick="sendAjax('listUsers', 'user_main', '')">Back</button>
 	
 </div>
