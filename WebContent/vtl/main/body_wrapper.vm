@@ -48,10 +48,11 @@
   	
   	<div>
   		#if ( $_logged_in )
-  			#parse("vtl/main/menu_user.vm")
+  			##parse("vtl/main/menu_user.vm")
+  			#parse("vtl/main/menu_db.vm")
   		#else
-  			##parse("vtl/main/menu_anon.vm")
-  			#parse("vtl/main/menu_demo.vm")
+  			#parse("vtl/main/menu_anon.vm")
+  			##parse("vtl/main/menu_demo.vm")
   		#end
   	</div>
   	<div id="bottom_text">
@@ -71,6 +72,7 @@
 			<div id="div_center" class="shadow"></div>
 			<div id="div_empty"></div>
 			#parse("vtl/main/modal-window.vm")
+			#parse("vtl/main/modal-window2.vm")
 		</form>
 	</div>
 	
@@ -173,12 +175,12 @@
 		if ( document.getElementById(e).style.display == "none" ) {
 			//document.getElementById(e).style.display = "block";
 			_jq('#' + e).slideDown('slow');
-			document.getElementById('icon-' + e).innerHTML = '<i class="fa fa-angle-down" aria-hidden="true"></i>';
+			document.getElementById('icon-' + e).innerHTML = '<i class="fa fa-angle-down fa-fw" aria-hidden="true"></i>';
 		}
 		else {
 			//document.getElementById(e).style.display = "none";
 			_jq('#' + e).slideUp('slow');
-			document.getElementById('icon-' + e).innerHTML = '<i class="fa fa-angle-right" aria-hidden="true"></i>';
+			document.getElementById('icon-' + e).innerHTML = '<i class="fa fa-angle-right fa-fw" aria-hidden="true"></i>';
 		}
 	}
 	
@@ -226,6 +228,7 @@
 		#else
 			let page_name = 'lebah.portal.v2.LandingPageModule';
 			getPage(page_name);
+			show_login();
 		#end
 
 	}
@@ -250,9 +253,9 @@
 	      
 	      break;
 	      
-	      case 91: //Cmd
-	      alert('Disabled!');
-	      break;
+	      //case 91: //Cmd
+	      //alert('Disabled!');
+	      //break;
 
 	   }
 	}

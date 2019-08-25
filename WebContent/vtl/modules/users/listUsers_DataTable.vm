@@ -33,8 +33,10 @@
 		<td>$!userData.lastName</td>
 		<td>$!userData.initial</td>
 		<td>
-			#if ( $userData.avatarImageFileName )
-			 <img style="width:40px;border-radius:50%" src="../download?filename=$!userData.avatarImageFileName" />
+			#if ( $userData.avatarImageFileName && $userData.avatarImageFileName != "" )
+			 	<img style="width:40px;border-radius:50%" src="../download?filename=$!userData.avatarImageFileName" />
+			#else
+				<img style="width:40px;border-radius:50%" src="$util.profilePic.imgSrc" />
 			#end
 		</td>
 		<td align="right">

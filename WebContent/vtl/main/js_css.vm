@@ -74,6 +74,7 @@ body {
 	font-size:12pt;
 	font-weight:bold;
 	margin-bottom:20px;
+	height:30px;
 	border-bottom:1px solid #000;
 }
 
@@ -240,9 +241,9 @@ body {
 }
 
 #login-box {
-	background-color:#076ac6;
+	background-color:#e6e9ed;
 	padding:20px; 
-	color:#fff
+	color:#000;
 
 }
 

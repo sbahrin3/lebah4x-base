@@ -1,6 +1,6 @@
 
 <div class="row">
-  	<div class="col-sm-6">
+  	<div class="col-sm-4">
   	
 	  	<div class="form-group">
 			<label for="userDataName">Username</label>
@@ -8,10 +8,10 @@
 		</div>
   	
   	</div>
-  	<div class="col-sm-6">
+  	<div class="col-sm-4">
  
 	  	<div class="form-group">
-			<label for="firstName">User Role</label>
+			<label for="role">Role</label>
 			<select data-required="true" data-msg="User Role is required." class="form-control" id="roleId" name="roleId">
 				<option value=""></option>
 				#foreach ( $role in $roles )
@@ -21,12 +21,20 @@
 		</div>
 		  	
   	</div>
-
+  	<div class="col-sm-4">
+  		<label for="otherRole">Other Role</label>
+ 		<select class="form-control" id="otherRoleId" name="otherRoleId">
+			<option value=""></option>
+			#foreach ( $role in $otherRoles )
+				<option value="$role.id" #if ( $userData.hasRole($role.id) ) selected #end>$role.name</option>
+			#end
+		</select>
+  	</div>
 </div>
 
 <div class="row">
 
-  	<div class="col-sm-6">
+  	<div class="col-sm-4">
  
 	  	<div class="form-group">
 			<label for="firstName">First Name</label>
@@ -34,7 +42,7 @@
 		</div>
 		  	
   	</div>
-  	<div class="col-sm-6">
+  	<div class="col-sm-4">
 
 	  	<div class="form-group">
 			<label for="lastName">Last Name</label>
@@ -43,7 +51,14 @@
 		  	
   	</div>
   	
+  	<div class="col-sm-4">
 
+	  	<div class="form-group">
+			<label for="initial">Initial</label>
+			<input type="text" maxlength="100" class="form-control" id="initial" name="initial" value="$!userData.initial"  placeholder="">
+		</div>
+		  	
+  	</div>
   	  	
 </div>
 
@@ -135,7 +150,7 @@
 		  <div style="padding:10px;margin-top:50px">
 			  	<div id="divUploadFile2">
 			  	#if ( $userData.signatureImageFileName )
-			  		<img style="width:100px" src="../download?filename=$!userData.signatureImageFileName" />
+			  		<img style="height:100px" src="../download?filename=$!userData.signatureImageFileName" />
 			 		<br/>
 			  	#end
 			  	</div>

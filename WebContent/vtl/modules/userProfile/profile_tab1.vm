@@ -1,6 +1,6 @@
 
 <div class="row">
-  	<div class="col-sm-6">
+  	<div class="col-sm-4">
   	
 	  	<div class="form-group">
 			<label for="userDataName">Username</label>
@@ -8,12 +8,26 @@
 		</div>
   	
   	</div>
-  	<div class="col-sm-6">
+  	<div class="col-sm-4">
  
 	  	<div class="form-group">
-			<label for="firstName">User Role</label>
+			<label for="firstName">Role</label>
 			<input type="text" maxlength="100" #if ( $userData ) readonly #end class="form-control" value="$!userData.role.name"  placeholder="">
 
+		</div>
+		  	
+  	</div>
+  	
+  	<div class="col-sm-4">
+ 
+	  	<div class="form-group">
+	  		<label for="otherRole">Other Role</label>
+	 		<select class="form-control" #if ( $userData ) disabled #end id="otherRoleId" name="otherRoleId">
+				<option value=""></option>
+				#foreach ( $role in $otherRoles )
+					<option value="$role.id" #if ( $userData.hasRole($role.id) ) selected #end>$role.name</option>
+				#end
+			</select>
 		</div>
 		  	
   	</div>
@@ -22,7 +36,7 @@
 
 <div class="row">
 
-  	<div class="col-sm-6">
+  	<div class="col-sm-4">
  
 	  	<div class="form-group">
 			<label for="firstName">First Name</label>
@@ -30,7 +44,7 @@
 		</div>
 		  	
   	</div>
-  	<div class="col-sm-6">
+  	<div class="col-sm-4">
 
 	  	<div class="form-group">
 			<label for="lastName">Last Name</label>
@@ -39,7 +53,14 @@
 		  	
   	</div>
   	
+  	<div class="col-sm-4">
 
+	  	<div class="form-group">
+			<label for="initial">Initial</label>
+			<input type="text" maxlength="100" class="form-control" id="initial" name="initial" value="$!userData.initial"  placeholder="">
+		</div>
+		  	
+  	</div>
   	  	
 </div>
 
@@ -131,7 +152,7 @@
 		  <div style="padding:10px;margin-top:50px">
 			  	<div id="divUploadFile2">
 			  	#if ( $userData.signatureImageFileName )
-			  		<img style="width:100px" src="../download?filename=$!userData.signatureImageFileName" />
+			  		<img style="height:100px" src="../download?filename=$!userData.signatureImageFileName" />
 			 		<br/>
 			  	#end
 			  	</div>

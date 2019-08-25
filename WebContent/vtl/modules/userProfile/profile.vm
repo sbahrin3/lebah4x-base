@@ -8,8 +8,10 @@
 
 <div class="row" style="margin-bottom:40px">
   <div class="col-sm-3">
-  	#if ( $userData.avatarImageFileName )
-  	<img style="border-radius:50%;width:200px" src="../download?filename=$!userData.avatarImageFileName" />
+  	#if ( $userData.avatarImageFileName && $userData.avatarImageFileName != "" )
+  		<img style="border-radius:50%;width:200px" src="../download?filename=$!userData.avatarImageFileName" />
+  	#else
+  		<img style="border-radius:50%;width:200px" src="$util.profilePic.imgSrc" />
   	#end
   </div>
   <div class="col-sm-9" style="padding:20px">

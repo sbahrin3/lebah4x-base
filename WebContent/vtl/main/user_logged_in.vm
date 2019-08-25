@@ -1,8 +1,8 @@
 <div style="cursor:pointer"  onclick="_jq('#div_logged_in').slideDown('slow');">
-#if ( $user.avatarImageFileName )
+#if ( $user.avatarImageFileName && $user.avatarImageFileName != "" )
 	<img style="width:30px;border-radius:50%" src="../download?filename=$!user.avatarImageFileName" />
 #else
-	<i class="fa fa-user-circle-o" aria-hidden="true"></i> 
+	<img style="width:30px;border-radius:50%" src="$util.profilePic.imgSrc" />
 #end
 $!user.firstName $!user.lastName
 </div>
@@ -13,10 +13,10 @@ $!user.firstName $!user.lastName
 		<table style="width:100%">
 			<tr>
 				<td style="width:120px">
-					#if ( $user.avatarImageFileName )
+					#if ( $user.avatarImageFileName && $user.avatarImageFileName != "" )
 						<img style="width:100px;border-radius:50%" src="../download?filename=$!user.avatarImageFileName" />
 					#else
-						<i class="fa fa-user-circle-o" aria-hidden="true"></i> 
+						<img style="width:100px;border-radius:50%" src="$util.profilePic.imgSrc" />
 					#end
 				</td>
 				<td style="text-align:left;font-weight:bold;padding-left:5px">
@@ -26,6 +26,17 @@ $!user.firstName $!user.lastName
 				</td>
 			</tr>
 		</table>
+		<div class="form-group" style="text-align:left;padding-left:40%">
+			<label>Assigned Roles:</label>
+			<ul>
+			<li>$!user.role.name</li>
+			#if ( $user.secondaryRoles.size() > 0 )
+				#foreach ( $role in $user.secondaryRoles )
+					<li>$role.name</li>
+				#end
+			#end
+			</ul>
+		</div>
 		
 		<div style="text-align:right">
 			<a href="javascript:showMyProfile()" class="btn btn-success">My Profile</a>
