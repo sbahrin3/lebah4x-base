@@ -1,0 +1,4 @@
+<div class="module_title">Menus Management</div>
+<div id="menus_main">
+	#parse("vtl/modules/setupMenus/list.vm")
+</div>
